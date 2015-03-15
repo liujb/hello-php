@@ -3,7 +3,7 @@
 if (!function_exists('connect_db')) {
     function connect_db()
     {
-        $connect = new mysqli("localhost", "root", "liu!@#631959_", "test");
+        $connect = new mysqli("localhost", "root", "", "test");
         if (!$connect) {
             echo "Mysql Connect Error!";
         } else {
@@ -12,3 +12,5 @@ if (!function_exists('connect_db')) {
         $connect->close();
     }
 }
+
+connect_db();
