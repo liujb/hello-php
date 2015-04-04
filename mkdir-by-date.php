@@ -1,18 +1,23 @@
 <?php 
 
+    /**
+     *
+     * 根据日期创建文件夹
+     * 
+     */  
     function mkdir_by_date($path){
-        $path = trim($path, '/') . '/';
+        $path = rtrim($path, '/') . '/';
 	$year = date('Y');
 	$month = date('m');
 	$day = date('d');
-	if(!is_dir($path . $year . '_' . $month)) { 
-	     mkdir($path . $year . '_' . $month);
+	
+	$folder_name = $path . $year . '-' . $month . '-' . $day;
+	$result = false;
+	if(!is_dir($folder_name)) {
+	    $result = mkdir($folder_name, 0777, true);
 	}
-	if(!is_dir($path . $year . '_' . $month . '/' . $day)) {
-	     mkdir($path . $year . '_' . $month . '/' . $day);
-	}
-	return $path . $year . '_' . $day . '/';
-        echo $path;
+	return ($result ? $folder_name : '');
     }
 
-    mkdir_by_date('/Users/liujb/tmp');
+    $folder_path = mkdir_by_date('/Users/liujb/code/php-study');
+    echo $folder_path;
