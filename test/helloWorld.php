@@ -4,9 +4,9 @@
 
 	#可变函数
 	function foo(){
-		echo "<br/>In foo()\n";
-	};
+	    echo "<br/>In foo()\n";
+	}
 
 	$func = "foo";
-	$func();//可变函数
+	$func(); //可变函数
 ?>
