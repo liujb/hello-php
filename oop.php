@@ -1,27 +1,35 @@
-<?php 
-	class Base{
-		public $name;
+<?php
 
-		//构造函数
-		function Base($n){
-			$this->name = $n;
-		}
+class Base
+{
+    public $name;
 
-		//function
-		function sayHello(){
-			echo 'Hi nice to meet you '.$this->name;
-		}
-	};
+    //构造函数
+    function Base($n)
+    {
+        $this->name = $n;
+    }
 
-	class Child extends Base{
-		function sayHello(){
-			echo 'Hi，this is my son say hello to you ';
-		}
-	}
+    //function
+    function sayHello()
+    {
+        echo 'Hi nice to meet you ' . $this->name;
+    }
+}
 
-	$p = new Base('Allen');
-	$p->sayHello();
+;
 
-	$c = new Child();
-	$c->sayHello();
+class Child extends Base
+{
+    function sayHello()
+    {
+        echo 'Hi，this is my son say hello to you ';
+    }
+}
+
+$p = new Base('Allen');
+$p->sayHello();
+
+$c = new Child();
+$c->sayHello();
 ?>

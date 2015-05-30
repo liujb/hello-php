@@ -3,6 +3,7 @@
 $abc = "fucking you";
 
 if (!function_exists('print_global')) {
+
     function print_global()
     {
         // echo $abc; // 语法错误
