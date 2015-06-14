@@ -1,0 +1,10 @@
+index/
+.idea/
+system/
+logs/
+upload/
+node_modules
+.tmp
+app/bower_components
+.DS_store
+.idea

@@ -61,7 +61,8 @@ class Upload
 
     }
 
-    /*
+
+    /**
      * 获取文件扩展名
      * @param String $filename 要获取的文件名的文件
      */
