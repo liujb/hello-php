@@ -23,9 +23,9 @@ class Read_csv
 
         while (!feof($fs)) {
             $row_data = fgets($fs);
-            if($row_data && !empty($row_data)) {
+            if ($row_data && !empty($row_data)) {
                 $row_data = str_replace("\n", "", $row_data);
-                $row_array = explode(',' , $row_data);
+                $row_array = explode(',', $row_data);
                 $ret[] = $row_array;
             }
         }
@@ -34,7 +34,7 @@ class Read_csv
         return $ret;
     }
 
-   
+
     /**
      * @param $row
      */
