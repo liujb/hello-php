@@ -9,9 +9,8 @@ function getMobileInfo($phone)
     if (empty($phone)) {
         exit('Please input phone');
     }
-
     $response = file_get_contents('http://appyun.sinaapp.com/index.php?app=mobile&controller=index&action=api&outfmt=json&mobile="' . $phone . '"');
-    $result = json_decode($response, true);
+    $result   = json_decode($response, true);
 
     exit(json_encode($result));
 }

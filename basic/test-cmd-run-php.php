@@ -1,3 +1,4 @@
 <?php
-    echo "wwww\n";
-?>
+
+echo "wwww\n";
+
