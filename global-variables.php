@@ -1,17 +1,17 @@
 <?php
 
-$abc = "fucking you";
+//$abc = "fucking you";
 
 if (!function_exists('print_global')) {
 
+    $abc = "fucking you";
     function printGlobal()
     {
-        // echo $abc; // 语法错误
+        $abc = "fucking you";
         global $abc;
         echo 'global variables ' . $abc . "\r\n";
 
     }
-
 }
 
-printGlobal();
+//printGlobal();

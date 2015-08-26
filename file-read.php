@@ -13,6 +13,6 @@ $file_stream = fopen($file_name, 'r') or die('open file failed');
 
 // echo fgets($file_stream);
 while (!feof($file_steam)) {
-	echo fgets($file_stream);
+    echo fgets($file_stream);
 }
 fclose($file_stream);
