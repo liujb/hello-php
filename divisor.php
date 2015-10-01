@@ -26,6 +26,7 @@ for ($i = 1; $i <= 9; $i++) {
     // echo $i . "\r\n";
     $num = pow(10, $i);
     $res = getDivisor($num);
-    echo implode(", ", $res)
-    echo array_sum($res) . "\r\n"; // implode(",", $res);
+    
+    echo implode(", ", $res);
+    $sum = array_sum($res);
 }

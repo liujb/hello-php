@@ -7,9 +7,7 @@
 class Singleton {
 	private static $_instance = null;
 
-	private function __construct() {
-
-	}
+	private function __construct() {}
 
 	/**
 	 * 获得实例
