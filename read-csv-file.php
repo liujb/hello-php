@@ -1,10 +1,9 @@
 <?php
-require_once './Read_csv.php';
+require_once 'libs/csv-reader.php';
+// require_once ("libs/csv-reader.php");
 
-$file_path = './data.csv';
-$read_csv_obj = new Read_csv();
+$fileName = "data/example.csv";
+$csvReader = new CSVReader();
 
-$ret = $read_csv_obj->read_file($file_path);
-
-var_dump($ret);
-// echo json_encode($ret);
+$arr = $csvReader->Get($fileName);
+echo (json_encode($arr));

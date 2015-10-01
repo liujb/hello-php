@@ -13,6 +13,7 @@ class CSVReader
    * @param [type] $fileName [description]
    */
   public function Get($fileName) {
+
     if (!file_exists($fileName)) {
       return $this->result["fileNotExists"];
     }
@@ -22,6 +23,7 @@ class CSVReader
     
     while (!feof($resource)) {
       $line = fgets($resource);
+
       if (empty($line)) {
         continue;
       }
@@ -35,4 +37,6 @@ class CSVReader
     
     return $ret;
   }
+
+  
 }
