@@ -1,13 +1,13 @@
 <?php
-	function double($i){
-		return $i * 2;
-	};
-	$b = $a = 5;
-	$c = $a++;
-	$e = $d = ++$b;
-	$f = double($d++);
-	$h = $g += 10;
+function double($i) {
+  return $i * 2;
+}
 
-	echo "$a";
-	echo "<br/>\$a"
-?>
+$b = $a = 5;
+$c = $a++;
+$e = $d = ++$b;
+$f = double($d++);
+$h = $g+= 10;
+
+echo "$a";
+echo "<br/>\$a";
