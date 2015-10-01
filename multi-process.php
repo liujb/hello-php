@@ -14,13 +14,13 @@ $pid = pcntl_fork();
 
 echo 'child: ' . $pid . PHP_EOL;
 
-if ($pid == -1) {
-    echo "Fork sub process failed.\r\n";
-} else if ($pid == 0) {
-    $mypid = getmypid(); 
-    // 子进程本身的PID
-    // 这个PID一定跟父进程调用pcntl_fork()返回的值一样
-    echo "I am child. My PID: " . $mypid . " and my father's PID: " . $parentPid . PHP_EOL;
+if (-1 == $pid) {
+	echo "Fork sub process failed.\r\n";
+} else if (0 == $pid) {
+	$mypid = getmypid();
+	// 子进程本身的PID
+	// 这个PID一定跟父进程调用pcntl_fork()返回的值一样
+	echo "I am child. My PID: " . $mypid . " and my father's PID: " . $parentPid . PHP_EOL;
 } else {
-    echo "I am father. My children pid: " . $pid . " and mine: " . $parentPid . PHP_EOL;
+	echo "I am father. My children pid: " . $pid . " and mine: " . $parentPid . PHP_EOL;
 }
