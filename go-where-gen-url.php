@@ -11,4 +11,4 @@ $driverUrl = "http://10.121.91.146:8081/getCoordis?userType=driver&userId=$drive
 $passengerUrl = "http://10.121.91.146:8081/getCoordis?userType=passenger&userId=$passengerId&startTime=$startTime&endTime=$endTime";
 
 echo $driverUrl . "\r\n";
-echo "$passengerUrl" . "\r\n";
+echo $passengerUrl . "\r\n";
