@@ -1,10 +1,10 @@
 <?php
-    # Set default timezone
-    date_default_timezone_set('UTC');
+// Set default timezone
+date_default_timezone_set('UTC');
 
-    echo time()."<br>";
+echo time() . "\n";
 
-    $date = date('Y-m-d H:i:s',time());
-    echo $date;
+$date = date('Y-m-d H:i:s', time());
+echo $date;
 
-    echo gettype($date);
+echo gettype($date);

@@ -10,4 +10,4 @@ $f = double($d++);
 $h = $g+= 10;
 
 echo "$a";
-echo "<br/>\$a";
+// echo "<br/>\$a";
