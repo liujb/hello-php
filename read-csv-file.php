@@ -9,5 +9,5 @@ $csvReader = new CSVReader();
 $example = $csvReader->Get($exampleFile);
 $drivers = $csvReader->Get($driverFile, true);
 
-echo json_encode($example);
-// echo json_encode($drivers);
+// echo json_encode($example);
+echo json_encode($drivers);

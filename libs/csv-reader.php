@@ -26,6 +26,8 @@ class CSVReader {
 		$flag = true;
 		$resource = fopen($fileName, 'r') or die("file read failed.");
 
+		// exit(gettype($resource));
+
 		while (!feof($resource)) {
 			$line = fgets($resource);
 			$line = str_replace("\n", "", $line);

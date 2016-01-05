@@ -26,6 +26,7 @@ class Upload {
 		$this->name = $_FILES["file"]["name"];
 		$this->file_type = $_FILES["file"]["type"];
 		$this->tmp_name = $_FILES["file"]["tmp_name"];
+		
 		$this->allow_file_types = array('jpeg', 'doc', 'docx', 'dll', 'rar', 'zip', 'wps');
 		$this->file_size = $_FILES['file']['size'];
 		$this->target_dir = './Upload';

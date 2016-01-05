@@ -3,7 +3,9 @@
 $file = 42;
 function meanningOfLife() {
   global $file;
-  echo "Menning of the life is " . $file;
+  $file +=2;
+  echo "Menning of the life is " . $file."\r\n";
 }
 
 meanningOfLife();
+echo $file +"\r\n";

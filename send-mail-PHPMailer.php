@@ -21,22 +21,21 @@ $mail->Port = 25;
 // $mail->Port = 465;
 
 // 登录smtp服务的用户名和密码
-$mail->Username = "liujiangbei";
-$mail->Password = "liu!@#631959_";
+$mail->Username = "xxxx";
+$mail->Password = "xxxx";
 
 // 发件人
-$mail->SetFrom('liujiangbei@126.com', 'JiangbeiLiu');
+$mail->SetFrom('xxxx@126.com', 'xxxx');
 
 // 收件人
-$mail->AddAddress('578317190@qq.com', "578317190");
-$mail->AddAddress('578317190@qq.com', "578317190");
+$mail->AddAddress('xxxx@qq.com', "xxxx");
 
-// $mail->AddReplyTo('liujiangbei@126.com', 'JiangbeiLiu');
+// $mail->AddReplyTo('xxxx@126.com', 'xxxx');
 
 $mail->isHTML(true);
 $mail->Subject = 'Hello'; // 设置邮件标题
 $mail->AltBody = "为了查看该邮件，请切换到支持 HTML 的邮件客户端";
-$mail->MsgHTML('<div style="font-size:20px">刘江北你好，请您立刻回家。</div>');
+$mail->MsgHTML('<div style="font-size:20px">What a fucking day.</div>');
 //$mail->AddAttachment("images/phpmailer.gif"); // 附件
 
 if (!$mail->Send()) {

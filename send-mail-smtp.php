@@ -15,11 +15,11 @@ require_once "libs/email.class.php";
 $smtpserver = "smtp.126.com"; //SMTP服务器
 $smtpserverport = 25; //SMTP服务器端口
 
-$smtpusermail = "liujiangbei@126.com"; //SMTP服务器的用户邮箱
-$smtpemailto = "578317190@qq.com"; //发送给谁
+$smtpusermail = "xxxx@126.com"; //SMTP服务器的用户邮箱
+$smtpemailto = "xxxx@qq.com"; //发送给谁
 
-$smtpuser = "liujiangbei"; //SMTP服务器的用户帐号
-$smtppass = "liu!@#631959_"; //SMTP服务器的用户密码
+$smtpuser = "xxxx"; //SMTP服务器的用户帐号
+$smtppass = "xxxx"; //SMTP服务器的用户密码
 
 $mailtitle = "Hello, nice to meet you."; //邮件主题
 $mailcontent = "你好，这里是邮件内容"; //邮件内容
