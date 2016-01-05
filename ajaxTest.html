@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ajax-test</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+  var ajax = function(obj) {
+    /**
+     * create xmlhttprequest
+     * @return {[type]} [description]
+     */
+    var createXHR = function() {
+      var xhr;
+      if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest(); //Firefox, Chrome, Opera, Safari
+      } else {
+        try {
+          xhr = new ActiveXObject('Microsoft.XMLHTTP'); //IE
+        } catch (e) {
+          try {
+            xhr = new ActiveXObject("Msxml2.XMLHTTP"); //IE6，IE5
+          } catch (err) {
+            console.log("Could not create XMLHttpRequest");
+          }
+        }
+      }
+      return xhr;
+    };
+
+    /**
+     * check params
+     * @param  {[type]} obj [description]
+     * @return {[type]}     [description]
+     */
+    var simpleCheck = function(obj) {
+      if (!obj || Object.prototype.toString.call(obj) !== '[object Object]') {
+        return "Not an object.";
+      }
+      if (obj.method.toUpperCase() !== 'GET' && obj.method.toUpperCase() !== 'POST') {
+        return "Only accept get or post method.";
+      }
+      if (obj.data && typeof obj.data !== 'object') {
+        return "Data must be object";
+      }
+      if ((obj.succFn && typeof obj.succFn !== 'function') || (obj.failFn && typeof obj.failFn !== 'function')) {
+        return "succFn and failFn must be function";
+      }
+    };
+
+    /**
+     * object to body
+     * @param  {[type]} obj [description]
+     * @return {[type]}     [description]
+     */
+    var objToBody = function(obj) {
+      var res = '';
+      for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+          res += '&' + p + '=' + obj[p] + '';
+        }
+      }
+      return res.replace(/^\&/, "");
+    };
+
+    // check params and create xmlhttprequest
+    var res = simpleCheck(obj);
+    console.log(res);
+    if (res) {
+      return res;
+    }
+    var xhr = createXHR();
+    if (!xhr) {
+      return "create XMLHttpRequest failed.";
+    }
+    xhr.open(obj.method, obj.url, true); //true表示异步
+
+    // 监听statechange事件
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          obj.succFn(xhr.responseText);
+        } else {
+          obj.failFn(xhr.responseText);
+        }
+      } else if (xhr.readyState === 3) {} else {}
+    };
+
+    // send request
+    if (obj.method.toUpperCase() === 'GET') {
+      xhr.send(null);
+    } else if (method.toUpperCase() === 'POST') {
+      var body = objToBody(obj.data);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send(body);
+    }
+  };
+
+  ajax({
+    method: "GET",
+    url: "/ajaxHandler.php?data=123",
+    data: {
+      acb: "ads"
+    },
+    succFn: function(text) {
+      console.log(text);
+    },
+    failFn: function(text) {
+      console.log(text);
+    }
+  });
+  </script>
+</body>
+
+</html>
